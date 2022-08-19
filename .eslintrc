@@ -1,0 +1,25 @@
+{
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "react-app",
+    "prettier"
+  ],
+  "plugins": [
+    "react",
+    "prettier"
+  ],
+  "rules": {
+    "prettier/prettier": "error",
+    "no-unused-vars": "error",
+    "react-hooks/exhaustive-deps": "error"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}

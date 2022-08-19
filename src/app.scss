@@ -1,0 +1,133 @@
+$theme-colors: (
+  'primary': #16abf8,
+  'secondary': teal,
+  'success': green,
+  'info': purple,
+  'warning': orange,
+  'danger': red,
+  'light': #fafafa,
+  'dark': black,
+  'light-primary': #e5f6ff,
+  'light-secondary': #e2ffff,
+  'light-success': #e3ffe3,
+  'light-info': #ffe9ff,
+  'light-warning': #fff6e6,
+  'light-danger': #ffeaea,
+);
+
+$colors: (
+  'blue': blue,
+  'indigo': indigo,
+  'purple': purple,
+  'pink': pink,
+  'red': red,
+  'orange': orange,
+  'yellow': yellow,
+  'green': green,
+  'teal': teal,
+  'cyan': cyan,
+  'white': white,
+  'gray': #eee,
+  'gray-dark': #ddd,
+);
+
+@import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,400,600');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: normal;
+  font-size: 0.8rem;
+}
+
+*:focus {
+  outline: none !important;
+}
+
+input,
+.form-control,
+.form-select {
+  &:focus {
+    border-color: #ddd !important;
+    box-shadow: unset !important;
+  }
+}
+
+.form-control.form-control-solid {
+  background-color: #f5f8fa;
+  border-color: #f5f8fa;
+  color: black;
+  transition: color 0.2s ease, background-color 0.2s ease;
+  font-size: 0.85rem;
+}
+
+@for $i from 0 through 100 {
+  .radius-#{$i} {
+    border-radius: #{$i}px !important;
+  }
+  .vh-#{$i} {
+    height: #{$i}vh !important;
+  }
+}
+@for $i from 0 through 100 {
+  .w-#{$i*5}px {
+    width: #{$i * 5}px !important;
+  }
+  .h-#{$i*5}px {
+    height: #{$i * 5}px !important;
+  }
+  .same-#{$i*5}px {
+    width: #{$i * 5}px !important;
+    height: #{$i * 5}px !important;
+  }
+}
+
+.fs-7 {
+  font-size: 0.9rem !important;
+}
+.fs-8 {
+  font-size: 0.8rem !important;
+}
+.fs-9 {
+  font-size: 0.7rem !important;
+}
+.fs-10 {
+  font-size: 0.6rem !important;
+}
+
+$hex: (
+  'a': 'a',
+  'b': 'b',
+  'c': 'c',
+  'd': 'd',
+  'e': 'e',
+  'f': 'f',
+  0: 0,
+  1: 1,
+  2: 2,
+  3: 3,
+  4: 4,
+  5: 5,
+  6: 6,
+  7: 7,
+  8: 8,
+  9: 9,
+) !default;
+
+@each $key1, $value1 in $hex {
+  @each $key2, $value2 in $hex {
+    .bg-#{$key1 + $key2} {
+      background-color: ##{$value1 + $value2 + $value1 + $value2 + $value1 + $value2} !important;
+    }
+    .border-#{$key1 + $key2} {
+      border-color: ##{$value1 + $value2 + $value1 + $value2 + $value1 + $value2} !important;
+    }
+    .text-#{$key1 + $key2} {
+      color: ##{$value1 + $value2 + $value1 + $value2 + $value1 + $value2} !important;
+    }
+  }
+}
+
+.pointer {
+  cursor: pointer !important;
+}
